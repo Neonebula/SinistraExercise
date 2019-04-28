@@ -12,7 +12,33 @@ For example, ‘0x0f4’, ‘0acdadecf822eeff32aca5830e438cb54aa722e3’, ‘8BA
 -  f(n)= 3 * f(n-1) - f(n-2);
 Provide an implementation for ‘f’. Bonus points for a non recursive implementation.
 
->
+> public int calcul(int input){
+  if (input == 0){
+    return 1;
+  }
+  else if (input == 1){
+    return 3;
+  }
+  return 3 * calcul(input-1) - calcul(input-2);
+}
+
+  public int calculNonRecursive(int input){
+  if (input == 0){
+    return 1;
+  }
+  else if (input == 1){
+    return 3;
+  }
+  int result = 0;
+  int n1 = 3;
+  int n2 = 1;
+  for (int i=2; i<=input; i++){
+    result =  3 * n1 - n2;
+    n2 = n1;
+    n1 = result;
+  }
+  return result;
+}
 
 BACKEND - MySQL
 
@@ -24,19 +50,32 @@ BACKEND - MySQL
   - email,
   - created_at
 
->
+> CREATE TABLE users (
+  id INT PRIMARY KEY NOT NULL,
+  firstname VARCHAR(100),
+  lastname VARCHAR(100),
+  gender VARCHAR(50),
+  email VARCHAR(100),
+  created_at DATE
+)
 
 2. Write a query on the previous table that lists the 10 most recently added users.
 
->
+> SELECT *
+FROM users
+Order by created_at
+LIMIT 10
 
 GENERAL - Creativity
 Si vous êtes Français, vous pouvez répondre en Français.
 
 1. Describe the color yellow to someone who is blind
 
->
+> C'est une couleur qui s'apparente au concept chaleur, la lumière, la joie. Si tu as écouté le film vice versa de pixar c'est la couleur du personnage la joie.
 
 3. Describe the data model you’d use for a Battleship game. What are the key objects? How will your code use them?
 
->
+> Il y aura les modèles : 
+Case : sa responsabilité est de savoir si un bateau es présent ou non. Il pourra aussi contenir l'information de si on lui a déjà tiré dessus ou non.
+Bateau : Sa responsabilité est d'etre positionné sur des cases du plateau et d'informer les cases concernée de sa présence.
+Plateau : contient les cases du plateau et sera le point d'entrée des interactions.
