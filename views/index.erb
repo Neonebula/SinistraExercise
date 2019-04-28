@@ -10,29 +10,46 @@
     <body>
         <div class="container">
             <h1>Welcome to my social network</h1>
-            <% @database.each do |data| %>
-                <div class="row">
-                    <div class="col">
-                    <div class="card mb-3">
-                        <% if data[:photo] != nil %>
-                            <img src="<%= data[:photo] %>" class="card-img-top" alt="Image not found">
-                        <% end %>
-                        
-                        <div class="card-body">
-                            <h5 class="card-title"><%= data[:title] %></h5>
-                            <p class="card-text"><%= data[:content] %></p>
-                            <% if data[:rating] != nil %>
-                                <div class="col">
-                                    Rating :
-                                </div>
-                                <div class="col">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: <%= data[:rating].to_i * 20 %>%" aria-valuenow="<%= data[:rating] %>" aria-valuemin="0" aria-valuemax="5"><%= data[:rating] %></div>
-                                    </div>
-                                </div>
+            <% @database.each_with_index do |data, index| %>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-6 align-self-center">
+                        <div class="card mb-3">
+                            <% if data[:photo] != nil %>
+                                <img src="<%= data[:photo] %>" class="card-img-top" alt="Image not found">
                             <% end %>
+                            
+                            <div class="card-body">
+                                <a href="/comment/<%= index %>">
+                                    <h5 class="card-title"><%= data[:title] %></h5>
+                                </a>
+                                <p class="card-text"><%= data[:content] %></p>
+                                <% if data[:rating] != nil %>
+                                    <div class="col">
+                                        Rating :
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: <%= data[:rating].to_i * 20 %>%" aria-valuenow="<%= data[:rating] %>" aria-valuemin="0" aria-valuemax="5"><%= data[:rating] %></div>
+                                        </div>
+                                    </div>
+                                <% end %>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseComments<%=index%>" aria-expanded="false" aria-controls="collapseComments<%=index%>">
+                                        Show comments
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseComments<%=index%>">
+                                    <ul class="list-group">
+                                        <% if @comments[index][0] != nil%>
+                                            <li class="list-group-item"><%= @comments[index][0] %></li>
+                                        <% end %>
+                                        <li class="list-group-item">
+                                            <a class="btn btn-primary" href="/comment/<%= index %>">Show all comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             <% end %>
