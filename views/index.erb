@@ -4,7 +4,7 @@
     <div class="row justify-content-md-center">
       <div class="col-lg-6 align-self-center">
         <div class="card mb-3">
-          <a href="/comment/<%= index %>" style="text-decoration:none !important; color:black !important">
+          <a href="/article/<%= index %>" style="text-decoration:none !important; color:black !important">
             <% if data[:photo] != nil %>
               <img src="<%= data[:photo] %>" class="card-img-top" alt="Image not found">
             <% end %>
@@ -34,7 +34,7 @@
                 <ul class="list-group">
                   <li class="list-group-item"><%= @comments[index][0] %></li>
                   <li class="list-group-item">
-                    <a class="btn btn-primary" href="/comment/<%= index %>">Show all comments</a>
+                    <a class="btn btn-primary" href="/article/<%= index %>">Show all comments</a>
                   </li>
                 </ul>
               </div>
