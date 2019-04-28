@@ -10,6 +10,7 @@ end
 get "/article/:index" do
   @element = DB[params['index'].to_i]
   @comments = COMMENTS[params['index'].to_i]
+  @index = params['index']
   erb :comment
 end
 get "/write-article" do
@@ -22,6 +23,13 @@ post "/article" do
   @comments = COMMENTS
   @comments << []
   DB = @data
+  erb :success
+end
+post "/comment/:index" do
+  @comment = params[:comment]
+  @comments = COMMENTS
+  @comments[params['index'].to_i] << @comment[:content]
+  COMMENTS = @comments
   #Ajouter a DB
   erb :success
 end
