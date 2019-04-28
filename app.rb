@@ -4,5 +4,5 @@ require_relative "database"
 
 get "/" do
   @database = DB
-  erb :layout
+  erb :index
 end

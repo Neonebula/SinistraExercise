@@ -14,7 +14,7 @@ Sinatra is a simple web framework for Ruby, similar in logic to Rails. It uses [
 
 => [Github](https://github.com/sinatra/sinatra)
 
-*Don't forget to run ```gem install sinatra``` && ```gem install sinatra-contrib``` in order to run the program*
+*Don't forget to run ```gem install sinatra``` && ```gem install sinatra-contrib``` && ```ruby app.rb``` in order to run the program*
 
 In this simple exercise, a database of posts and comments is given to you (see Database.rb). Comments are ordered to match each post (first comment array - first post, etc.).
 
