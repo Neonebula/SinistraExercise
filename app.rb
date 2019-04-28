@@ -20,4 +20,5 @@ end
 post "/article" do
   @article = params[:article]
   #Ajouter a DB
+  erb :wip
 end
