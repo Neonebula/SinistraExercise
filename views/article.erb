@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>Write an article</h1>
+  <form action="/article" method="post" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="articleTitle">Title</label>
+      <input type="text" class="form-control" id="articleTitle" placeholder="Enter the article title" name="article[title]" required>
+      <div class="invalid-feedback">
+        Please provide a title.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="articleContent">Content</label>
+      <input type="text" class="form-control" id="articleContent" placeholder="Enter the article content" name="article[content]" required>
+      <div class="invalid-feedback">
+        Please provide a content.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="articleRating">Rating</label>
+      <select class="form-control" id="articleRating" name="article[rating]">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+        <option value="5">Five</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<script>
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      var forms = document.getElementsByClassName('needs-validation');
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>

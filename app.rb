@@ -12,8 +12,12 @@ get "/comment/:index" do
   @comments = COMMENTS[params['index'].to_i]
   erb :comment
 end
-get "/article" do
+get "/write-article" do
   @database = DB
   @comments = COMMENTS
   erb :article
+end
+post "/article" do
+  @article = params[:article]
+  #Ajouter a DB
 end
