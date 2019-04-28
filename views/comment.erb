@@ -9,7 +9,7 @@
         <div class="card-body">
           <p class="card-text"><%= @element[:content] %></p>
           <% if @element[:rating] != nil %>
-            <p class="card-text">Rating : <%= @element[:rating] %>/5</p>
+            <p class="card-text"><b>Rating :</b> <%= @element[:rating] %>/5</p>
           <% end %>
         </div>
       </div>
@@ -37,7 +37,7 @@
           <form action="/comment/<%=@index%>" method="post" class="needs-validation" novalidate>
             <div class="form-row">
               <div class="col-10">
-                <input type="text" class="form-control" placeholder="What are you thoughts?" name="comment[content]" required>
+                <input type="text" class="form-control" placeholder="What are your thoughts?" name="comment[content]" required>
               </div>
               <div class="col-2">
                 <button type="submit" class="btn btn-primary">Comment</button>
