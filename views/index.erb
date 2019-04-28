@@ -14,13 +14,23 @@
                 <div class="row">
                     <div class="col">
                     <div class="card mb-3">
-                        <% if data[data.keys[2]] != nil %>
-                            <img src="<%= data[data.keys[2]] %>" class="card-img-top" alt="Image not found">
+                        <% if data[:photo] != nil %>
+                            <img src="<%= data[:photo] %>" class="card-img-top" alt="Image not found">
                         <% end %>
                         
                         <div class="card-body">
-                            <h5 class="card-title"><%= data[data.keys[0]] %></h5>
-                            <p class="card-text"><%= data[data.keys[1]] %></p>
+                            <h5 class="card-title"><%= data[:title] %></h5>
+                            <p class="card-text"><%= data[:content] %></p>
+                            <% if data[:rating] != nil %>
+                                <div class="col">
+                                    Rating :
+                                </div>
+                                <div class="col">
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: <%= data[:rating].to_i * 20 %>%" aria-valuenow="<%= data[:rating] %>" aria-valuemin="0" aria-valuemax="5"><%= data[:rating] %></div>
+                                    </div>
+                                </div>
+                            <% end %>
                         </div>
                     </div>
                     </div>
