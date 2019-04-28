@@ -16,7 +16,12 @@
     </div>
   </div>
   <div class="row">
-    <h2>Comments</h2>
+    <div class="col-12">
+      <h2>Comments</h2>
+    </div>
+    <% if @comments.length == 0%>
+      <div class="col">There is no comment.</div>
+    <%end%>
     <% @comments.each do |data| %>
       <div class="col-lg-12">
         <div class="card mb-3">

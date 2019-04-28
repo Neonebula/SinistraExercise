@@ -1,33 +1,21 @@
 You'll find 2 parts to this test:
 
-**1/ Questions**
-
-Take a look at questions.txt and answer the questions presented to you
-
-**2/ Sinatra Exercise**
+#Sinatra Exercise
 
 This is a fullstack exercise, creating a simple webapp in Sinatra
+**Run :**
 
-Sinatra is a simple web framework for Ruby, similar in logic to Rails. It uses [erb](http://www.stuartellis.eu/articles/erb/), and can take routes with parameters.
+```
+gem install sinatra
+gem install sinatra-contrib
+ruby app.rb
+```
 
-=> [doc](http://www.sinatrarb.com/)
+**Explications :**
+C'est une webapp que j'ai construit ce dimanche en suivant les consignes. Niveau design j'ai pris du bootstrap et j'ai utilisé quelques composants pour rendre l'expérience utilisateur agréable.
+J'ai ajouté la possibilité d'écrire un article et de le retrouver sur la page d'acceuil.
+**Améliorations futures :**
 
-=> [Github](https://github.com/sinatra/sinatra)
-
-*Don't forget to run ```gem install sinatra``` && ```gem install sinatra-contrib``` && ```ruby app.rb``` in order to run the program*
-
-In this simple exercise, a database of posts and comments is given to you (see Database.rb). Comments are ordered to match each post (first comment array - first post, etc.).
-
-Your goal is to create a credible web application listing posts and comments. The app must make intelligent use of the components of each post, and overall look like a real web app. The rest is completely up to you.
-
-This is a test of your front-end, back-end capabilities, as well as your creativity. We will be looking for:
-
-- A clean backend code
-
-- A professional-looking front-end
-
-- A surprising feature: something we wouldn't have thought about.
-
-Overall, we're just looking for you to surprise us!
-
-*Any questions ? [samy@skello.io](mailto:samy@skello.io)*
+- Possibilité d'écrire un commentaire.
+- Pagination des articles et des commentaires.
+- Creation et connexion à un compte

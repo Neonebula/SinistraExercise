@@ -17,9 +17,11 @@ get "/write-article" do
 end
 post "/article" do
   @article = params[:article]
-  #@data = DB
-  #@data << @article
-  #DB = @data
+  @data = DB
+  @data << @article
+  @comments = COMMENTS
+  @comments << []
+  DB = @data
   #Ajouter a DB
-  erb :wip
+  erb :success
 end
