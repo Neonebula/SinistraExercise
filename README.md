@@ -21,9 +21,10 @@ Plusieures pages sont disponibles :
 - Le detail d'un article avec tous ses commentaires (On peut même en ajouter ^^). On retrouve cette page en cliquant sur la card de l'article.
 - L'écriture d'un article où l'on peut renseigner le titre, le contenu et la note qu'on s'auto attribue.
 
-**Améliorations futures :**
+**Améliorations imaginées :**
 
 - Possibilité de supprimer un commentaire/article.
 - Pagination des articles et des commentaires.
 - Creation et connexion à un compte.
 - Persistance des données dans le fichier `database.rb`.
+- Page admin avec un dashboard permettant de gérer tous les articles et commentaires.
